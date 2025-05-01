@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loan Application</title>
+        
+    </head>
 <body>
     <div class="container">
         <h1>Acme Loan Application Portal</h1>
-        <form id="application-form">
             <label for="name">Full Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
-            <label for="Address">Zip Code:</label><br>
+            <label for="address">Address:</label><br>
             <input type="text" id="address" name="address" required><br><br>
 
             <button onclick="submitApp()">Submit Application</button>
-        </form>
 
         <div id="result"></div>
+        <h2>Check Application Status</h2>
+            <input type="text" id="check-id" placeholder="Enter Application ID">
+            <button onclick="checkStatus()">Check Status</button>
+
+            <p id="status-output"></p>
+        <h2>Update Status and Notes</h2>
+            <input type="text" id="app-id" placeholder="Application ID">
+            <input type="text" id="new-status" placeholder="New Status">
+            <input type="text" id="status-note" placeholder="Optional Note">
+            <button onclick="updateStatus()">Update Status</button>
     </div>
+    <h2>Subphase Control</h2>
+    <div>
+        <label for="app-id">Application ID:</label>
+        <input type="text" id="app-idb" required>
+    </div>
+    <div>
+        <label for="subphase-name">Subphase Name:</label>
+        <input type="text" id="subphase-name" required>
+    </div>
+    <div>
+        <label for="task-name">Task Name:</label>
+        <input type="text" id="task-name" required>
+    </div>
+    <div>
+        <button onclick="addSubphase()">Add Subphase</button>
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <div>
+        <label for="status">Task Status:</label>
+        <input type="text" id="status" required>
+    </div>
+    <div>
+        <label for="message">Message (optional):</label>
+        <input type="text" id="message">
+    </div>
+    <div>
+        <button onclick="updateTaskStatus()">Update Task Status</button>
+    </div>
+    
+<script defer src="/static/script.js"></script>  
 </body>
 </html>
